@@ -1,0 +1,116 @@
+<!doctype html>
+<html ng-app="dreambeemcomApp" ng-controller="PagemetaCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind="Page.title();">Loading...</title>
+    <meta name="description" content="{{Page.description()}}">
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="fragment" content="!">
+
+      <meta name="prerender-status-code" content="{{statusCode}}">
+      <meta ng-if="statusCode === '301'" name="prerender-header" content="Location: {{loc}}">
+
+      <meta name="msvalidate.01" content="A3EF84788C25E1065122BFE0DED95770" />
+
+    <meta property="og:url"                content="{{ogUrl}}">
+    <meta property="og:type"               content="{{ogType}}">
+    <meta property="og:title"              content="{{ogTitle}}">
+    <meta property="og:description"        content="{{ogDescription}}">
+    <meta property="og:image"              content="{{ogImage}}">
+    <meta property="og:image:alt"          content="{{ogImageAlt}}">
+    <meta property="fb:app_id"             content="1107023486046982">
+
+    <link rel="stylesheet" href="https://www.dreambeem.com/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.dreambeem.com/bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://www.dreambeem.com/styles/main.css">
+    <link rel="stylesheet" href="https://www.dreambeem.com/bower_components/material-design-icons/sprites/css-sprite/sprite-navigation-grey600.css">
+      <link rel="stylesheet" href="https://www.dreambeem.com/bower_components/ng-magnify/src/css/ng-magnify.css"/>
+
+      <script src="https://www.dreambeem.com/bower_components/angular/angular.min.js"></script>
+      <script src="https://www.dreambeem.com/bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="https://www.dreambeem.com/bower_components/ng-magnify/src/js/ng-magnify.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-material/angular-material.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/ng-countUp.js/ngCountUp.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/countUp.js/countUp.min.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/speakingurl/lib/speakingurl.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-facebook/lib/angular-facebook.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+
+    <script src="https://www.dreambeem.com/scripts/app.js"></script>
+      <script src="https://www.dreambeem.com/scripts/controllers/controllersAll.js"></script>
+    <script src="https://www.dreambeem.com/scripts/controllers/beemlineamazon.js"></script>
+      <script src="https://www.dreambeem.com/scripts/controllers/AcceptBooking.js"></script>
+      <script src="https://www.dreambeem.com/scripts/controllers/DisacceptBooking.js"></script>
+      <script src="https://www.dreambeem.com/scripts/controllers/beemlineebay.js"></script>
+    <script src="https://www.dreambeem.com/scripts/controllers/beemlineamazonebay.js"></script>
+    <script src="https://www.dreambeem.com/scripts/services/stk-httpservice.js"></script>
+      <script src="https://www.dreambeem.com/scripts/services/stk-statuscodeservice.js"></script>
+      <script src="https://dreambeem.com/scripts/services/stk-metaservice.js"></script>
+
+    <script src="https://www.dreambeem.com/scripts/config/theme.js"></script>
+    <script src="https://www.dreambeem.com/bower_components/angular-google-chart/ng-google-chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-meta/0.3.9/ngMeta.min.js"></script>
+
+      <base href="/">
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56275515-1"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-56275515-1');
+      </script>
+
+  </head>
+  <body id="bodyScope">
+
+  <div id="google_translate_element"></div><script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'de', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-56275515-1'}, 'google_translate_element');
+      }
+  </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div ng-controller="MainCtrl">
+        <div ng-init="checkIfCookiesAreEnabled();"></div>
+    </div>
+
+    <div ng-include="'views/document/header.html'"></div>
+
+  <div ng-controller="MainCtrl">
+      <div class="container" ng-init="banners();">
+
+          <noscript>
+              <div layout="row">
+                  <md-content flex layout-padding>
+                      <h3>Diese App verwendet Javascript. Javascript im Browser bitte anstellen.</h3>
+                      <img src="images/javascript.png">
+                      <img src="images/angular.png">
+                  </md-content>
+              </div>
+          </noscript>
+
+          <div ng-view="" flex="100" sm-flex="100" sd-flex="100" xs-flex="100">
+              <div class="spinner" ng-show="loading">
+                  <div class="double-bounce1"></div>
+                  <div class="double-bounce2"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <div ng-include="'views/document/footer.html'"></div>
+    
+</body>
+</html>
