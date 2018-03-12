@@ -1,0 +1,39 @@
+<md-content flex layout-padding>
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <h1>
+            Login für Sie als Seller
+        </h1>
+    </div>
+    <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div layout="row" layout-align="center" layout-wrap flex="100" lg-flex="100" md-flex="100" sm-flex="100" xs-flex="100">
+        <form name="LoginForm" ng-submit="submitSellerLoginForm()" class="w45" novalidate>
+            <div layout="row" layout-align="start" flex>
+                <md-input-container flex="100">
+                    <label>Email *</label>
+                    <input type="text" id="loginEmail" name="loginEmail" ng-model="loginEmail" required md-no-asterisk>
+                    <div ng-messages="LoginForm.loginEmail.$error">
+                        <div ng-message="required">Benötigt</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start" flex>
+                <md-input-container flex="100">
+                    <label>Passwort *</label>
+                    <input type="password" id="loginPass" name="loginPass" ng-model="loginPass" required md-no-asterisk>
+                    <div class="errors" ng-messages="LoginForm.loginPass.$error">
+                        <div ng-message="required">Benötigt</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div layout="row" layout-align="start" flex>
+                <a ng-href="/" class="text-small">Passwort vergessen?</a>
+            </div>
+            <div layout="row" class="m-t" layout-align="center" flex>
+                <md-button type="submit" ng-disabled="LoginForm.$invalid" class="md-button md-raised md-warn">Anmelden</md-button>
+            </div>
+        </form>
+    </div>
+</md-content>

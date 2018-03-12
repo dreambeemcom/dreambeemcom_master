@@ -1,0 +1,19 @@
+<md-content flex layout-padding ng-controller="DreamloginCtrl" ng-init="setMeta();">
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <h1><strong>Dream - Login</strong></h1>
+    </div>
+    <p>
+        Login für Dich - einfach mit Facebook oder Twitter - und losbeemen!
+    </p>
+    <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="pull-left">
+        <img src="images/fbl.png" ng-click="FBLogin();">
+    </div>
+    <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="pull-left">
+        <img src="images/twl.png" ng-click="twitterOAuth();">
+    </div>
+</md-content>
+

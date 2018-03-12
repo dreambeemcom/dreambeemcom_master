@@ -1,0 +1,42 @@
+<md-content flex layout-padding>
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="md-padding">
+            <h3><strong ng-if="category">{{category}}</strong></h3>
+            <h1 ng-if="product[0].title">{{product[0].title}}</h1>
+            <!-- <div ><img width="1280" style="max-width: 100%; height: auto;" src="" alt="{{product[0].title}}" title="{{product[0].title}}"></div> -->
+            <div id="mainImage" data-ng-magnify alt="{{product[0].title}}" title="{{product[0].title}}" image-src="{{product[0].main_image}}"></div>
+        </div>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="md-padding">
+            <h2 class="text-success" ng-if="available || product[0].dream_price">Lieferbar {{product[0].delivery_time}}</h2>
+            <h3 ng-if="product[0].shipping_cost">Versand: <strong>{{product[0].shipping_cost}} €</strong></h3>
+            <h3 ng-if="product[0].manufacturer">Hersteller: <strong>{{product[0].manufacturer}}</strong></h3>
+            <h3 ng-if="product[0].colour">Farbe: <strong>{{product[0].colour}}</strong></h3>
+            <h3 ng-if="product[0].sizes">Größe: <strong>{{product[0].sizes}}</strong></h3>
+            <p ng-if="product[0].description"><strong>Beschreibung:</strong> {{product[0].description}}</p><br>
+            <h2 ng-if="product[0].dream_price" class="text-success"><strong>{{product.price}}</strong><br><span class="text-small">inkl. 19% MwSt</span></h2>
+            <h2 ng-if="available" class="text-success"><strong>{{product.price}}</strong><span style="margin-left: 14px !important;" class="text-small">inkl. 19% MwSt</span></h2>
+            <!-- <div class="small-spinner" ng-if="!available || !product[0].base_price" ng-show="sloading">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div> -->
+            <span ng-if="available || product[0].dream_price" ng-click="addProduct2Cart(product[0].productId,pid);">
+                <md-button class="md-button md-raised md-warn">In den Warenkorb</md-button>
+            </span>
+            <h3 class="text-primary" ng-if="!available && !sloading"><strong>{{productAvailable}}</strong></h3>
+        </div>
+    </div>
+    <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <div ng-repeat="sproduct in similarProducts" class="center-block" flex="25" flex-md="33" flex-sm="50" flex-xs="100">
+            <div class="text-center">
+                <a href="https://www.dreambeem.com/{{sproduct.sstitle}}/{{sproduct.productId}}/{{sproduct.sid}}/" style="text-decoration: none !important; color: black !important;">
+                    <h4><strong>{{sproduct.title}}</strong></h4>
+                    <img width="140" src="{{sproduct.main_image}}" alt="{{sproduct.sstitle}}" title="{{sproduct.sstitle}}">
+                </a>
+            </div>
+        </div>
+    </div>
+</md-content>

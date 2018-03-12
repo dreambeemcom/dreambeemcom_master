@@ -1,0 +1,47 @@
+<md-content flex layout-padding ng-controller="OldCategoryCtrl" ng-init="initOldCategoryResult()">
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <div flex="100" flex-md="100" flex-sm="100" flex-xs="100">
+            <h1><strong>Kategorie "{{cat}}" gefunden</strong></h1>
+            <h2><strong>{{productsCount[0].dCount}} Produkte gefunden</strong></h2>
+            <h3>{{pageNumber}}. Seite von {{pagesCount}} Seiten</h3>
+        </div>
+    </div>
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <div ng-repeat="product in products" class="center-block" flex="20" flex-md="33" flex-sm="50" flex-xs="100">
+            <h2 class="text-center">
+                <a ng-href="http://www.newsbeem.com/ab/m/{{product.title}}/{{product.productId}}">
+                    <h2><strong>{{product.title}}</strong></h2>
+                    <img src="{{product.img180_url}}">
+                    <div class="clearfix"></div>
+                    <strong md-colors="{color:'primary'}">{{product.price}} €</strong>
+                </a>
+            </h2>
+        </div>
+    </div>
+    <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div layout="row" ng-if="pagesCount > 1" layout-wrap layout-align="start" class="m-b m-t" flex>
+        <md-grid-list layout-align="start" md-cols-sm="8" md-cols-md="8" md-cols-lg="8" md-cols-gt-lg="8" md-row-height="8px" flex>
+            <md-grid-tile>
+                <strong>Seiten:</strong>
+            </md-grid-tile>
+            <md-grid-tile>
+                <a ng-init="p = pageNumber - 1" ng-href="http://www.newsbeem.com/shopchoose/category/{{cat}}/{{catId}}/{{shopId}}?&page={{p}}">
+                    <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg" class="material-icons md-48"></md-icon>
+                </a>
+            </md-grid-tile>
+            <md-grid-tile id="pager" ng-repeat="page in pages">
+                <a href="{{page.link}}" ng-class="{ active: isCurrentPage(pageNumber, page.page) }">{{page.page}}</a>
+            </md-grid-tile>
+            <md-grid-tile>
+                <a ng-init="p = pageNumber + 1" ng-href="http://www.newsbeem.com/shopchoose/category/{{cat}}/{{catId}}/{{shopId}}&page={{p}}">
+                    <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_arrow_forward_48px.svg" class="material-icons md-48"></md-icon>
+                </a>
+            </md-grid-tile>
+
+        </md-grid-list>
+    </div>
+</md-content>
+

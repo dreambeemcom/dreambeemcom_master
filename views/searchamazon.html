@@ -1,0 +1,50 @@
+<div ng-controller="BeemlineAmazonCtrl" class="beemline" ng-cloak>
+    <md-content class="md-padding" id="beemlineConfig" layout="column">
+            <h1>{{h1}}</h1>
+            <p>Hier kannst Du Deine Wunschprodukte aus dem Amazon - Katalog suchen und finden.</p>
+
+            <form name="beemlineAmazonForm" novalidate ng-submit="submitAmazonSearch(amazonSearch)">
+                <md-input-container style="width: 75% !important;" flex="100" flex-sm="100" flex-md="100" flex-xs="100" class="pull-left m-t">
+                    <input type="text" name="amazonsearch" ng-model="amazonSearch" placeholder="Suche" id="amazonsearch">
+                </md-input-container>
+                    <md-button type="submit" ng-disabled="beemlineAmazonForm.$invalid" class="md-button md-raised md-warn pull-left">
+                        Suchen
+                    </md-button>
+            </form>
+
+        <div class="spinner" ng-show="loading">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+
+            <span ng-if="searchAmazonMessage.length > 0"><strong class="text-warning">{{searchAmazonMessage}}</strong></span>
+
+        <div layout="row" ng-if="pagesCount > 1" layout-wrap layout-align="start" class="m-b m-t" flex>
+            <md-grid-list layout-align="start" md-cols-sm="8" md-cols-md="8" md-cols-lg="8" md-cols-gt-lg="8" md-row-height="8px" flex>
+                <md-grid-tile>
+                    <strong>Seiten:</strong>
+                </md-grid-tile>
+                <md-grid-tile id="pager" ng-repeat="page in pages">
+                    <a href="{{page.link}}" ng-class="{ active: isCurrentPage(pageNumber, page.page) }">{{page.page}}</a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+
+            <div id="beemline" class="beemline-area beemline-show">
+
+            </div>
+
+        <div layout="row" ng-if="pagesCount > 1" layout-wrap layout-align="start" class="m-b m-t" flex>
+            <md-grid-list layout-align="start" md-cols-sm="8" md-cols-md="8" md-cols-lg="8" md-cols-gt-lg="8" md-row-height="8px" flex>
+                <md-grid-tile>
+                    <strong>Seiten:</strong>
+                </md-grid-tile>
+                <md-grid-tile id="pager" ng-repeat="page in pages">
+                    <a href="{{page.link}}" ng-class="{ active: isCurrentPage(pageNumber, page.page) }">{{page.page}}</a>
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
+    </md-content>
+</div>

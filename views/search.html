@@ -1,0 +1,46 @@
+<md-content flex layout-padding ng-controller="SearchCtrl" ng-init="initSearchResult();">
+   <div layout="row" layout-wrap layout-align="start" flex>
+        <div flex="100" flex-md="100" flex-sm="100" flex-xs="100">
+            <h4><strong>Suche {{qd}}</strong></h4>
+            <h3><strong>{{productsCount[0].dCount}} Produkte gefunden</strong></h3>
+            <h3>{{pageNumber}}. Seite von {{pagesCount}} Seiten</h3>
+        </div>
+    </div>
+    <div ng-if="productMessage" layout-wrap layout="row" layout-align="start">
+        <span><strong class="md-primary">{{productMessage}}</strong></span>
+    </div>
+    <div layout-wrap layout="row" layout-align="start" flex>
+        <div ng-repeat="searchProduct in products" flex="20" flex-sm="33" flex-md="33" flex-xs="100">
+            <a style="color: black; text-decoration: none;" href="https://www.dreambeem.com/{{searchProduct[0].titleNew}}/{{searchProduct[0].productId}}/{{searchProduct[0].shopId}}/">
+                <h4>{{searchProduct[0].title}}</h4>
+                <img width="140" alt="{{searchProduct[0].title}}" title="{{searchProduct[0].title}}" src="{{searchProduct[0].main_image}}">
+            </a>
+        </div>
+    </div>
+    <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div layout="row" ng-if="pagesCount > 1" layout-wrap layout-align="start" class="m-b m-t" flex>
+        <md-grid-list layout-align="start" md-cols-sm="8" md-cols-md="8" md-cols-lg="8" md-cols-gt-lg="8" md-row-height="8px" flex>
+            <md-grid-tile>
+                <strong>Seiten:</strong>
+            </md-grid-tile>
+            <md-grid-tile>
+                <a ng-init="p = pageNumber - 1" ng-href="https://www.dreambeem.com/search?query={{q}}&page={{p}}">
+                    <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg" class="material-icons md-48"></md-icon>
+                </a>
+            </md-grid-tile>
+            <md-grid-tile id="pager" ng-repeat="page in pages">
+                <a href="{{page.link}}" ng-class="{ active: isCurrentPage(pageNumber, page.page) }">{{page.page}}</a>
+            </md-grid-tile>
+            <md-grid-tile>
+                <a ng-init="p = pageNumber + 1" ng-href="https://www.dreambeem.com/search?query={{q}}&page={{p}}">
+                    <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_arrow_forward_48px.svg" class="material-icons md-48"></md-icon>
+                </a>
+            </md-grid-tile>
+
+        </md-grid-list>
+    </div>
+</md-content>
+

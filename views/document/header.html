@@ -1,0 +1,53 @@
+<div ng-controller="MainCtrl">
+    <div class="header" style="height: auto;" ng-cloak>
+        <div class="container">
+            <md-content style="padding: 0 !important; height: auto; overflow: hidden;" flex layout-padding ng-init="initDreambeemHeader();">
+                <div layout="row" layout-wrap layout-align="start" flex>
+                    <div flex="10" flex-md="10" flex-sm="10" flex-xs="50" class="m-t">
+                        <a style="margin-top: 10px;" class="navbar-brand pull-left" href="/"><img width="35" src="images/db_logo.png"></a>
+                    </div>
+                    <div flex="10" flex-md="50" flex-sm="50" flex-xs="100" class="m-t">
+                        <div class="pull-left m-icon-standard" class="m-t">
+                            <md-icon style="margin-top: 15px;" md-svg-src="shoppingcart24" class="material-icons" ng-click="openCart($event,'cart',pid);"></md-icon>
+                            <div id="cartBubble">
+                                <div class="circle" style="margin-top: -40px; margin-left: 10px;">
+                                    <span><strong id="cart" class="cartNumber">{{cartNumber}}</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div flex="80" flex-md="80" flex-sm="80" flex-xs="50" class="m-t">
+                        <a href="https://www.dreambeem.com/dreamlogin">
+                            <md-button ng-click="" class="md-button md-raised">
+                                Login
+                            </md-button>
+                        </a>
+                        <a href="https://www.dreambeem.com/beemline">
+                            <md-button ng-click="" class="md-button md-raised">
+                                Suche
+                            </md-button>
+                        </a>
+                        <a href="https://www.dreambeem.com/wegweiser">
+                            <md-button ng-click="" class="md-button md-raised md-primary">
+                                Wegweiser
+                            </md-button>
+                        </a>
+
+                        <a href="https://www.dreambeem.com/dream-products" style="display: none;">
+                            <md-button ng-click="" class="md-button md-raised md-primary">
+                                Dream - Products
+                            </md-button>
+                        </a>
+                        <a href="https://www.dreambeem.com/tipps">
+                            <md-button ng-click="" class="md-button md-raised md-primary">
+                                Tipps
+                            </md-button>
+                        </a>
+                        <span class="text-small text-success"><strong>Hier kannst Du Geld einzahlen um einzukaufen</strong></span>
+                        <a href="https://paypal.me/AndrasSeke" target="_blank"><img width="160" src="https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png" alt="Paypal Zahlungen" title="Paypal Zahlungen"></a>
+                    </div>
+                </div>
+            </md-content>
+        </div>
+    </div>
+</div>

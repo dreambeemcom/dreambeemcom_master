@@ -1,0 +1,13 @@
+
+    <md-content class="md-padding">
+        <div class="spinner" ng-show="loading">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+         <h1>{{furnybeem_confirmation}}</h1>
+        <div layout="row" ng-if="error_confirmation" layout-align="start" flex>
+            <md-button ng-click="reloadRoute()" class="md-button md-raised md-primary">
+                Neu Laden
+            </md-button>
+        </div>
+    </md-content>

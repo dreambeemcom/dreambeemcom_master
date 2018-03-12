@@ -1,0 +1,22 @@
+<md-content class="md-padding" flex ng-controller="PartnerCtrl">
+    <h1>
+        <strong>
+            Partner
+        </strong>
+    </h1>
+    <p>Hier kannst Du Dreambeem.coms Partner einsehen.</p>
+    <div class="small-spinner" ng-show="sloading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div layout="row" layout-wrap layout-align="start">
+        <div ng-repeat="partner in partners" flex="33" flex-xs="100" flex-md="50" flex-sm="50" class="m-t">
+            <a href="{{partner.shoplink}}" target="_blank" ng-if="partner.logo.length > 0">
+                <img src="{{partner.logo}}" width="150">
+                <p><strong>{{partner.shopname}}</strong></p>
+            </a>
+        </div>
+    </div>
+
+
+</md-content>

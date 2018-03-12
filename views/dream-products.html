@@ -1,0 +1,96 @@
+<md-content class="md-padding">
+        <h1><strong>Dream - Products</strong></h1>
+            <div flex="100" flex-md="100" flex-sm="100" flex-xs="100" ng-show="startPage">
+                <div ng-repeat="dreamCategory in dreamCategories" layout-wrap layout="row" layout-align="start">
+                    <h3 ng-if="!dreamCategory.categoryLayer2Name"><strong>{{dreamCategory.categoryLayer1Name}}</strong></h3>
+                    <a href="https://www.dreambeem.com/dream-products/{{dreamCategory.categoryLayer2NameNew}}?cid2={{dreamCategory.categoryId2}}&p=1">{{dreamCategory.categoryLayer2Name}}</a>
+                </div>
+            </div>
+            <div flex="100" flex-md="100" flex-sm="100" flex-xs="100" ng-show="categoryPageShow">
+                <h2><strong>{{categoryHeader}}</strong></h2>
+                <div class="small-spinner" ng-show="sloading">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+                <span><strong ng-if="count">{{count}} Produkte gefunden</strong></span><br>
+                <span ng-if="pageNumber"><strong>{{(pageNumber * 16)}} von {{count}} Produkte</strong></span><br>
+                <span ng-if="pageNumber">Seite: <strong>{{pageNumber}}</strong></span>
+                <div layout-wrap layout="row" layout-align="start" flex>
+                    <div ng-repeat="categoryProduct in categoryProducts" flex="25" flex-sm="50" flex-md="50" flex-xs="100">
+                        <a style="color: black; text-decoration: none;" href="https://www.dreambeem.com/{{categoryProduct.titleNew}}/{{categoryProduct.productId}}/{{categoryProduct.shopId}}/">
+                            <h4>{{categoryProduct.title}}</h4>
+                            <img width="140" alt="{{categoryProduct.title}}" title="{{categoryProduct.title}}" src="{{categoryProduct.main_image}}">
+                        </a>
+                    </div>
+                </div>
+                <div layout="row" class="text-center" layout-wrap flex id="pager_down">
+                    <h3 style="float: left;">Seiten: </h3>
+                    <div style="margin-left: 26px; margin-top: 18px; float: left;" ng-repeat="pageN in pages">
+                        <a class="text-primary" ng-show="layer3" href="https://www.dreambeem.com/dream-products/{{categoryHeaderNew}}?cid2={{cid2}}&p={{pageN.pageN}}">
+                            <span class="text-middle"><strong>{{pageN.pageN}}</strong></span>
+                        </a>
+                        <a class="text-primary" ng-show="layer4" href="https://www.dreambeem.com/dream-products/{{categoryHeaderNew}}?cid3={{cid3}}&p={{pageN.pageN}}">
+                            <span class="text-middle"><strong>{{pageN.pageN}}</strong></span>
+                        </a>
+                        <a class="text-primary" ng-show="layer5" href="https://www.dreambeem.com/dream-products/{{categoryHeaderNew}}?cid4={{cid4}}&p={{pageN.pageN}}">
+                            <span class="text-middle"><strong>{{pageN.pageN}}</strong></span>
+                        </a>
+                        <a class="text-primary" ng-show="layer6" href="https://www.dreambeem.com/dream-products/{{categoryHeaderNew}}?cid5={{cid5}}&p={{pageN.pageN}}">
+                            <span class="text-middle"><strong>{{pageN.pageN}}</strong></span>
+                        </a>
+                        <a class="text-primary" ng-show="layer7" href="https://www.dreambeem.com/dream-products/{{categoryHeaderNew}}?cid6={{cid6}}&p={{pageN.pageN}}">
+                            <span class="text-middle"><span class="text-middle"><strong>{{pageN.pageN}}</strong></span>
+                        </a>
+                    </div>
+                </div>
+                <div ng-if="categoryProductMessage" layout-wrap layout="row" layout-align="start">
+                    <span><strong class="text-primary">{{categoryProductMessage}}</strong></span>
+                </div>
+                <div layout-wrap layout="row" layout-align="start">
+                    <div ng-repeat="categoryPage in categoryPages" flex="50" flex-md="50" flex-sm="50" flex-xs="100">
+                        <a ng-show="layer3" href="https://www.dreambeem.com/dream-products/{{categoryPage.categoryLayer3NameNew}}?{{categoryParameter}}={{categoryPage.categoryId3}}&p=1">
+                            <h3>
+                                {{categoryPage.categoryLayer3Name}}
+                            </h3>
+                        </a>
+                        <a ng-show="layer4" href="https://www.dreambeem.com/dream-products/{{categoryPage.categoryLayer4NameNew}}?{{categoryParameter}}={{categoryPage.categoryId4}}&p=1">
+                            <h3>
+                                {{categoryPage.categoryLayer4Name}}
+                            </h3>
+                        </a>
+                        <a ng-show="layer5" href="https://www.dreambeem.com/dream-products/{{categoryPage.categoryLayer5NameNew}}?{{categoryParameter}}={{categoryPage.categoryId5}}&p=1">
+                            <h3>
+                                {{categoryPage.categoryLayer5Name}}
+                            </h3>
+                        </a>
+                        <a ng-show="layer6" href="https://www.dreambeem.com/dream-products/{{categoryPage.categoryLayer6NameNew}}?{{categoryParameter}}={{categoryPage.categoryId6}}&p=1">
+                            <h3>
+                                {{categoryPage.categoryLayer6Name}}
+                            </h3>
+                        </a>
+                        <a ng-show="layer7" href="https://www.dreambeem.com/dream-products/{{categoryPage.categoryLayer7NameNew}}?{{categoryParameter}}={{categoryPage.categoryId7}}&p=1">
+                            <h3>
+                                {{categoryPage.categoryLayer7Name}}
+                            </h3>
+                        </a>
+                        <md-divider></md-divider>
+                    </div>
+                </div>
+                <div layout-wrap layout="row" layout-align="start" class="m-t">
+                    <div flex="100" flex-md="100" flex-sm="100" flex-xs="100" ng-if="seoData[0].seoText">
+                        <p>{{seoData[0].seoText}}</p>
+                    </div>
+                </div>
+                <div layout-wrap layout="row" layout-align="start" class="m-t">
+                    <div flex="100" flex-md="100" flex-sm="100" flex-xs="100" ng-if="seoData[0].seoImage">
+                        <img style="height: auto; max-width: 100%" src="{{seoData[0].seoImage}}" alt="{{categoryHeader}}" title="{{categoryHeader}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+</md-content>
+
+
+
+
+

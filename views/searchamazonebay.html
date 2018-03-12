@@ -1,0 +1,75 @@
+<div ng-controller="BeemlineCtrl" class="beemline" ng-cloak>
+    <md-content class="md-padding" id="beemlineConfig" layout="column">
+        <div flex="100" flex-sm="100" flex-md="100" flex-xs="100" class="">
+            <h1>{{h1}}</h1>
+            <p>Hier kannst Du Deine Wunschprodukte suchen und finden.</p>
+            <p>Mit der Amazon & Ebay Suche findest Du einen super Preisvergleich.</p>
+            <p>
+                <a href="https://www.dreambeem.com/beemline/amazon">
+                    <md-button class="md-button md-raised">
+                        Amazon Suche
+                    </md-button>
+                </a>
+                <a href="https://www.dreambeem.com/beemline/ebay">
+                    <md-button class="md-button md-raised">
+                        Ebay Suche
+                    </md-button>
+                </a>
+                <a href="https://www.dreambeem.com/beemline/amazon-ebay">
+                    <md-button class="md-button md-raised">
+                        Amazon & Ebay Preisvergleich
+                    </md-button>
+                </a>
+            </p>
+            <p>{{seoText}}</p>
+            <md-select ng-id="categoryChose" aria-label="Kategorie wählen" name="categoryChose" ng-model="categoryChose">
+                <md-option ng-value="first" selected>Kategorie wählen</md-option>
+                <md-option ng-click="loadCategory(537,'Baby & Kleinkind');" ng-value="537">Baby & Kleinkind</md-option>
+                <md-option ng-click="loadCategory(166,'Bekleidung & Accessoires');" ng-value="166">Bekleidung & Accessoires</md-option>
+                <md-option ng-click="loadCategory(922,'Bürobedarf');" ng-value="922">Bürobedarf</md-option>
+                <md-option ng-click="loadCategory(222,'Elektronik');" ng-value="222">Elektronik</md-option>
+                <md-option ng-click="loadCategory(888,'Fahrzeuge & Teile');" ng-value="888">Fahrzeuge & Teile</md-option>
+                <md-option ng-click="loadCategory(772,'Für Erwachsene');" ng-value="772">Für Erwachsene</md-option>
+                <md-option ng-click="loadCategory(469,'Gesundheit & Schönheit');" ng-value="469">Gesundheit & Schönheit</md-option>
+                <md-option ng-click="loadCategory(536,'Heim & Garten');" ng-value="536">Heim & Garten</md-option>
+                <md-option ng-click="loadCategory(632,'Heimwerkerbedarf');" ng-value="632">Heimwerkerbedarf</md-option>
+                <md-option ng-click="loadCategory(141,'Kameras & Optik');" ng-value="141">Kameras & Optik</md-option>
+                <md-option ng-click="loadCategory(8,'Kunst & Unterhaltung');" ng-value="8">Kunst & Unterhaltung</md-option>
+                <md-option ng-click="loadCategory(783,'Medien');" ng-value="783">Medien</md-option>
+                <md-option ng-click="loadCategory(436,'Möbel');" ng-value="436">Möbel</md-option>
+                <md-option ng-click="loadCategory(412,'Nahrungsmittel, Getränke & Tabak');" ng-value="412">Nahrungsmittel, Getränke & Tabak</md-option>
+                <md-option ng-click="loadCategory(5605,'Religion & Feierlichkeiten');" ng-value="5605">Religion & Feierlichkeiten</md-option>
+                <md-option ng-click="loadCategory(2092,'Software');" ng-value="2092">Software</md-option>
+                <md-option ng-click="loadCategory(1239,'Spielzeuge & Spiele');" ng-value="1239">Spielzeuge & Spiele</md-option>
+                <md-option ng-click="loadCategory(988,'Sportartikel');" ng-value="988">Sportartikel</md-option>
+                <md-option ng-click="loadCategory(5181,'Taschen & Gepäck');" ng-value="5181">Taschen & Gepäck</md-option>
+                <md-option ng-click="loadCategory(1,'Tiere & Tierbedarf');" ng-value="1">Tiere & Tierbedarf</md-option>
+                <md-option ng-click="loadCategory(111,'Wirtschaft & Industrie');" ng-value="111">Wirtschaft & Industrie</md-option>
+            </md-select>
+
+            <form name="beemlineForm" novalidate ng-submit="submitSearch($event, search)">
+                <md-input-container flex="100" flex-sm="100" flex-md="100" flex-xs="100">
+                    <input type="text" name="search" ng-model="search" placeholder="Suche" id="search">
+                </md-input-container>
+
+                <md-button type="submit" ng-disabled="beemlineForm.$invalid" class="md-button md-raised md-warn">
+                    Suchen
+                </md-button>
+            </form>
+
+            <div layout="row" layout-align="start" layout-wrap flex ng-if="counter">
+                <span>Nächstes Update in <strong>{{counter}} Sekunden</strong></span>
+            </div>
+
+            <div layout="row" layout-align="start" layout-wrap flex ng-if="count">
+                <span><strong>{{count}}</strong> Produkte</span>
+            </div>
+
+            <span ng-if="searchMessage.length > 0"><strong class="text-warning">{{searchMessage}}</strong></span>
+
+            <div id="beemline" class="beemline-area beemline-show" ng-init="getBeems();">
+                {{dreambeems}}
+            </div>
+        </div>
+    </md-content>
+</div>

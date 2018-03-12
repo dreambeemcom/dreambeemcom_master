@@ -1,0 +1,35 @@
+<md-content flex layout-padding>
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100">
+            <h1 ng-if="product[0].name">{{product[0].name}}</h1>
+            <div ng-if="product[0].img_url"><img src="{{product[0].img_url}}"></div>
+            <h2 ng-if="product[0].price"><strong>Preis: {{product[0].price}}</strong></h2>
+        </div>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100">
+            <h3 ng-if="product[0].designer"><strong>Hersteller: {{product[0].designer}}</strong></h3>
+            <p ng-if="product[0].advert">Beschreibung: {{product[0].advert}}</p>
+            <p ng-if="product[0].seoDescription">{{product[0].seoDescription}}</p>
+            <p ng-if="product[0].markDescription">{{product[0].markDescription}}</p>
+            <a ng-href="{{product[0].deeplink}}">
+                <md-button class="md-button md-raised md-warn">Zum Partnershop</md-button>
+            </a>
+        </div>
+    </div>
+    <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <div layout="row" layout-wrap layout-align="start" flex>
+        <div ng-repeat="sproduct in similarProducts" class="center-block" flex="25" flex-md="33" flex-sm="50" flex-xs="100">
+            <div class="text-center">
+                <a ng-href="http://www.newsbeem.com/ab/m/{{sproduct.name}}/{{sproduct.productId}}">
+                    <h2><strong>{{sproduct.name}}</strong></h2>
+                    <img src="{{sproduct.img_url}}" width="180">
+                    <div class="clearfix"></div>
+                    <strong>{{sproduct.price}} €</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</md-content>
+

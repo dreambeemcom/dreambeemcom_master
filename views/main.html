@@ -1,0 +1,185 @@
+<md-content class="md-padding" ng-show="standard" ng-init="setMeta();" ng-cloak>
+
+    <h1><strong>Dreambeem.com - Power Market</strong></h1>
+
+    <div layout="row" layout-align="start" layout-wrap flex>
+        <div flex="33" flex-md="33" flex-sm="33" flex-xs="100">
+            <img class="center-block md-padding" style="width: 100%; height: auto;" src="/images/startsite/webshop_dreambeemcom.png" title="Dreambeem.com - Power Market Webshop" alt="Dreambeem.com - Power - Market Webshop">
+        </div>
+        <div flex="66" flex-md="66" flex-sm="66" flex-xs="100">
+            <h2 class="md-padding">Dreambeem.com - Webshop</h2>
+            <p class="text-big md-padding">
+                Stelle Dir einen Webshop mit dreambeem.com zusammen.
+                Hier findest Du eine große Auswahl an Möglichkeiten um im Internet erfolgreich Produkte aus Deinem eigenen Webshop zu verkaufen.
+                Nutze Social Media um gezielt Werbung für Deinen Webshop zu machen.
+                <a href="https://www.dreambeem.com/agb-products">Hier die Allgemeinen Geschäftsbedingungen für Shops</a>
+            </p>
+
+        </div>
+    </div>
+
+    <div layout="row" layout-align="start" layout-wrap flex>
+        <div flex="66" flex-md="66" flex-sm="66" flex-xs="100">
+            <h2 class="m-l">Dreambeem.com - Dienstleistungen</h2>
+            <p class="text-big md-padding">
+                Nutze die sozialen Medien um auf dich aufmerksam zu machen.
+                Facebook & Twitter sind Deine Freunde. Sie helfen Dir das beste Bild von Deiner Persönlichkeit zu zeigen.
+                Erhalte Buchungen, indem Du Deine persönlichen Stärken in den sozialen Medien vermarktest.
+                <a href="https://www.dreambeem.com/agb-events">Hier die Allgemeinen Geschäftsbedingungen für Dienstleistungen</a>
+            </p>
+        </div>
+        <div flex="33" flex-md="33" flex-sm="33" flex-xs="100">
+            <img class="center-block md-padding" style="width: 100%; height: auto;" src="/images/startsite/dienstleistungen.png" title="Dreambeem.com - Power Market Buchung" alt="Dreambeem.com - Power - Market Buchung">
+        </div>
+    </div>
+
+    <div layout="row" layout-align="start" layout-wrap flex>
+        <div flex="33" flex-md="33" flex-sm="33" flex-xs="100">
+            <img class="center-block md-padding" style="width: 100%; height: auto;" src="/images/startsite/news_dreambeemcom.jpg" title="Dreambeem.com - Power Market News Nachrichten" alt="Dreambeem.com - Power - Market News Nachrichten">
+        </div>
+        <div flex="66" flex-md="66" flex-sm="66" flex-xs="100">
+            <h2 class="m-l">Dreambeem.com - Nachrichten</h2>
+            <p class="text-big md-padding">
+                Die aktuellen Nachrichten vom Stern, Spiegel und Focus können auf Dreambeem.com in die sozialen Medien veröffentlicht werden.
+                Sie werden täglich um 12:00 Uhr mitteleuropäischer Zeit aktualisiert.
+            </p>
+        </div>
+    </div>
+
+    <div layout="row" layout-align="start" layout-wrap flex>
+        <div flex="66" flex-md="66" flex-sm="66" flex-xs="100">
+            <h2 class="md-padding">Dreambeem.com - Kostenlos - Gratis</h2>
+            <p class="text-big md-padding">
+                Der Webservice Dreambeem.com ist kostenlos. Nutze Dreambeem.com gratis.
+            </p>
+        </div>
+        <div flex="33" flex-md="33" flex-sm="33" flex-xs="100">
+            <img class="center-block md-padding" style="width: 100%; height: auto;" src="/images/startsite/gratis_dreambeemcom.jpg" title="Dreambeem.com - Power Market gratis kostenlos" alt="Dreambeem.com - Power - Market gratis kostenlos">
+        </div>
+    </div>
+
+<div layout="row" layout-align="start" layout-wrap flex>
+
+    <div flex="100" flex-md="100" flex-sm="100" flex-xs="100">
+        <img class="center-block" style="width: 100%; height: auto;" src="/images/start3.jpg" title="Dreambeem.com - Power Market" alt="Dreambeem.com - Power - Market">
+    </div>
+</div>
+
+
+
+    <div layout="row" layout-align="start" layout-wrap flex>
+        <h2></h2>
+    </div>
+<div layout="row" class="text-center" layout-wrap flex>
+    <div flex="100" flex-md="100" flex-sm="100" flex-xs="100" ng-cloak>
+        <span class="text-big text-success"><strong>Hier kannst Du Geld einzahlen um einzukaufen</strong></span><br>
+        <a href="https://paypal.me/AndrasSeke" target="_blank"><img width="160" src="https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png" alt="Paypal Zahlungen" title="Paypal Zahlungen"></a>
+    </div>
+</div>
+
+<div ng-controller="MainCtrl" ng-init="initCounts();" class="m-t-lg">
+
+<div layout="row" class="text-center" class="m-t-lg" layout-wrap flex>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" ng-cloak>
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <span class="center-block"><strong>Viele Shops für die perfekte Wahl!</strong></span>
+                </div>
+            </md-toolbar>
+
+            <h2>Shops</h2>
+            <span class="text-big">
+                <strong>
+                    <ng-count-up from="0" to="{{ shopsCount }}" decimals="0" duration="9" delay="500" options="optionsCount">
+
+                    </ng-count-up>
+                </strong>
+            </span>
+        </div>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" ng-cloak>
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <span class="center-block"><strong>Produkte in Hülle und Fülle!</strong></span>
+                </div>
+            </md-toolbar>
+
+            <h2>Produkte</h2>
+            <span>
+                <strong class="text-big">
+                    <ng-count-up from="0" to="{{ productsCount }}" decimals="0" duration="9" delay="500" options="optionsCount">
+
+                    </ng-count-up>
+                </strong>
+            </span>
+        </div>
+    </div>
+<div layout="row" class="text-center" class="m-t-lg" layout-wrap flex>
+    <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" ng-cloak>
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <span class="center-block"><strong>Dreams - Menschen!</strong></span>
+            </div>
+        </md-toolbar>
+
+        <h2>Dreams</h2>
+            <span class="text-big">
+                <strong>
+                    <ng-count-up from="0" to="{{ dreamsCount }}" decimals="0" duration="9" delay="500" options="optionsCount">
+
+                    </ng-count-up>
+                </strong>
+            </span>
+    </div>
+    <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" ng-cloak>
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <span class="center-block"><strong>Aktuelle News!</strong></span>
+            </div>
+        </md-toolbar>
+
+        <h2>Nachrichten</h2>
+            <span>
+                <strong class="text-big">
+                    <ng-count-up from="0" to="{{ newsCount }}" decimals="0" duration="9" delay="500" options="optionsCount">
+
+                    </ng-count-up>
+                </strong>
+            </span>
+    </div>
+</div>
+    <div layout="row" layout-wrap layout-align="center" flex>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="m-t-lg text-center" ng-cloak>
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <span class="center-block"><strong>Deutsche Partner</strong></span>
+                </div>
+            </md-toolbar>
+            <a href="https://www.fokus.de" target="_blank"><img src="https://www.dreambeem.com/images/fokus.jpg" width="280" alt="Fokus Digital" class="m-t-lg" title="Fokus Digital"></a><br>
+            <a href="https://www.stern.de/" target="_blank"><img src="https://www.dreambeem.com/images/stern.jpg" width="280" alt="Stern Digital" title="Stern Digital"></a><br>
+            <a href="https://www.spiegel.de" target="_blank"><img src="https://www.dreambeem.com/images/spiegel.png" width="280" alt="Spiegel Digital" title="Spiegel Digital"></a>
+        </div>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="m-t-lg text-center" ng-cloak>
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <span class="center-block"><strong>Internationale Partner</strong></span>
+                </div>
+            </md-toolbar>
+            <a href="https://www.facebook.com" target="_blank"><img src="https://www.dreambeem.com/images/facebook.png" width="120" alt="Facebook Digital" class="m-t-lg" title="Facebook Digital"></a><br>
+            <a href="https://twitter.com" target="_blank"><img src="https://www.dreambeem.com/images/twitter.jpg" width="120" alt="Twitter Digital" title="Twitter Digital"></a><br>
+            <a href="https://www.ebay.de/" target="_blank"><img src="https://www.dreambeem.com/images/ebay.png" width="120" alt="Ebay Digital" title="Ebay Digital"></a>
+        </div>
+    </div>
+</div>
+    <h2>Warte nicht lange, Dein Account steht Dir zur Verfügung.</h2>
+    <h3><strong>Hier einloggen und das Dreambeem.com - Power Market - Erlebnis mit anderen Leuten im Web teilen.</strong></h3>
+    <div flex="100" flex-md="100" flex-sm="100" flex-xs="100" ng-controller="DreamloginCtrl" class="md-padding">
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="pull-left m-l m-t">
+            <img src="images/fbl.png" ng-click="FBLogin();">
+        </div>
+        <div flex="50" flex-md="50" flex-sm="50" flex-xs="100" class="pull-left m-l m-t">
+            <img src="images/twl.png" ng-click="twitterOAuth();">
+        </div>
+    </div>
+
+</md-content>
+
