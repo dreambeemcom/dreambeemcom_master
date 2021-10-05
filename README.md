@@ -15,3 +15,5 @@ Aside from that You can try to book people around the globe with sending them an
 This repository is the public area of the online casino Dreambeem.com.
 
 Here You can find Codes written in Html5, CSS2/3 and Javascript.
+
+Javascript Frameworks like Jquery and AngularJS are used here, e. g. client technologies named Angular Material, too.
